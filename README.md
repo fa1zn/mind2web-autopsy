@@ -1,7 +1,7 @@
 # Mind2Web Autopsy
 
 A failure-mode autopsy of web agents on OSU NLP's [Mind2Web](https://osu-nlp-group.github.io/Mind2Web/) dataset, plus a shaped verifiable reward function designed to replace binary scoring for GRPO training.
-
+ 
 ## Motivation
 
 Web agent benchmarks typically report aggregate accuracy — a model gets 30% of actions right, another gets 11%. But accuracy alone doesn't tell you *why* models fail or *how* to fix them. And binary reward signals (correct/incorrect) discard the gradient between failure types, producing dead GRPO batches where the optimizer has nothing to learn from.
