@@ -1,0 +1,497 @@
+Loaded Qwen/Qwen2.5-7B-Instruct-Turbo: 407 predictions
+Loaded gpt-4.1-mini: 407 predictions
+
+======================================================================
+1. POSITIONAL BIAS — Qwen/Qwen2.5-7B-Instruct-Turbo
+======================================================================
+
+  Predicted element index distribution (top 15):
+    [10]   37 (  9.1%) █████████
+    [ 4]   29 (  7.1%) ███████
+    [ 3]   21 (  5.2%) █████
+    [11]   21 (  5.2%) █████
+    [ 9]   21 (  5.2%) █████
+    [ 7]   19 (  4.7%) ████
+    [ 6]   19 (  4.7%) ████
+    [ 5]   18 (  4.4%) ████
+    [21]   17 (  4.2%) ████
+    [16]   13 (  3.2%) ███
+    [ 8]   13 (  3.2%) ███
+    [ 2]   13 (  3.2%) ███
+    [19]   12 (  2.9%) ██
+    [20]   12 (  2.9%) ██
+    [26]   12 (  2.9%) ██
+
+  Position bands:
+    Early [0-4]:     84 (20.6%)
+    Mid   [5-14]:   174 (42.8%)
+    Late  [15-29]:  146 (35.9%)
+    Invalid/OOB:      3 (0.7%)
+
+  Random baseline for early [0-4]: 16.6%
+  Model actual for early [0-4]:    20.6%
+  Bias ratio: 1.24x (>1 = favors early positions)
+
+======================================================================
+2. CANDIDATE COUNT vs ACCURACY — Qwen/Qwen2.5-7B-Instruct-Turbo
+======================================================================
+
+    Candidates   Total   Correct   Accuracy
+         30-34     407        47     11.5%  ████
+
+======================================================================
+3. STEP POSITION vs ACCURACY — Qwen/Qwen2.5-7B-Instruct-Turbo
+======================================================================
+
+    Step   Total   Correct   Accuracy
+       1      48         4      8.3%  ███
+       2      48         5     10.4%  ████
+       3      48         5     10.4%  ████
+       4      36         7     19.4%  ███████
+       5      36         3      8.3%  ███
+       6      27         2      7.4%  ██
+       7      27         3     11.1%  ████
+       8      22         1      4.5%  █
+       9      20         3     15.0%  ██████
+      10      18         1      5.6%  ██
+      11      13         3     23.1%  █████████
+      12      11         2     18.2%  ███████
+      13      11         4     36.4%  ██████████████
+      14       9         2     22.2%  ████████
+      15       7         1     14.3%  █████
+      16       6         1     16.7%  ██████
+      17       5         0      0.0%  
+      18       3         0      0.0%  
+
+  Step 1 accuracy: 8.3% (4/48)
+  Steps 2+ accuracy: 12.0% (43/359)
+
+======================================================================
+4. TAG CONFUSION MATRIX — Qwen/Qwen2.5-7B-Instruct-Turbo
+======================================================================
+
+      Expected →    Predicted   Count       %
+             a →          div      31    9.1%
+             a →            a      28    8.3%
+        button →          div      19    5.6%
+           div →          div      17    5.0%
+        button →            a      12    3.5%
+         input →          div      12    3.5%
+             a →           li      10    2.9%
+         input →            a      10    2.9%
+        button →       button      10    2.9%
+         label →          div       9    2.7%
+        select →          div       8    2.4%
+        button →        label       8    2.4%
+        button →           td       7    2.1%
+             a →           ul       7    2.1%
+         input →        input       7    2.1%
+         input →           li       7    2.1%
+        button →           li       7    2.1%
+           svg →          div       5    1.5%
+        button →        input       5    1.5%
+             a →       button       4    1.2%
+
+======================================================================
+5. OPERATION CONFUSION DETAIL — Qwen/Qwen2.5-7B-Instruct-Turbo
+======================================================================
+
+                  Confusion   Count
+               CLICK → TYPE       5
+    thetrainline: Find tickets from Edinburgh Waverly to Glagsgow Central on M
+    Action: [combobox]  Departure station, none selected. Select a station... -> CLICK
+    yelp: Search for Mexican restaurants in Concord, CA and start an o
+    Action: [textbox]  Near -> CLICK
+             CLICK → SELECT       3
+    kayak: Search for the cheapest two rooms near Kashi Vishwanath Temp
+    Action: [span]  Kashi Vishwanath Temple, Varanasi, Uttar Pradesh, ... -> CLICK
+    kayak: Search for the cheapest two rooms near Kashi Vishwanath Temp
+    Action: [checkbox]  Free internet -> CLICK
+
+======================================================================
+6. VALUE ERROR ANALYSIS — Qwen/Qwen2.5-7B-Instruct-Turbo
+======================================================================
+
+  Total value errors: 10
+
+  Value error types:
+    over_specified                    4 (40%)
+    empty_prediction                  3 (30%)
+    completely_different              2 (20%)
+    under_specified                   1 (10%)
+
+  Examples (gt_value → pred_value):
+    "1 Ticket" → "1"
+      resy: Make a reservation for the next restaurant-related
+    "Chicago" → "Chicago, IL"
+      seatgeek: Search for comedy shows taking place in Chicago, I
+    "Edinburgh" → "Edinburgh Waverly"
+      thetrainline: Find tickets from Edinburgh Waverly to Glagsgow Ce
+    "Lexus" → ""
+      cargurus: Check the lowest price for a white 2017 certified 
+    "Concord" → "Concord, CA"
+      yelp: Search for Mexican restaurants in Concord, CA and 
+    "KATHMANDU" → "KTM"
+      booking: Find the lowest-priced round trip flight with hote
+    "0" → "1000"
+      menards: Find Maytag electric dryers that are at least 7.3 
+    "Question about the event" → ""
+      eventbrite: Contact Yeah You Right Events who are the organise
+
+======================================================================
+9. RESPONSE FORMAT QUALITY — Qwen/Qwen2.5-7B-Instruct-Turbo
+======================================================================
+
+  Total responses: 407
+  Empty responses: 0 (0.0%)
+  Has 'Element:' line: 407 (100.0%)
+  Has 'Operation:' line: 407 (100.0%)
+  Has 'Value:' line: 363 (89.2%)
+  All three fields: 363 (89.2%)
+  Contains thinking/reasoning: 0 (0.0%)
+  Extra text (>3 lines): 2 (0.5%)
+
+======================================================================
+10. ERROR CASCADE — Qwen/Qwen2.5-7B-Instruct-Turbo
+======================================================================
+
+  P(correct | previous step correct): 12.2%
+  P(correct | previous step wrong):   12.0%
+
+  → Error recovery rate: 12.0%
+
+  Consecutive error streaks:
+    Average length: 4.1 steps
+    Max length: 26 steps
+    1 steps: 16 times
+    2 steps: 13 times
+    3 steps: 13 times
+    4 steps: 13 times
+    5 steps: 4 times
+    6 steps: 3 times
+    7 steps: 4 times
+    8 steps: 3 times
+
+======================================================================
+12. WEBSITE COMPLEXITY — Qwen/Qwen2.5-7B-Instruct-Turbo
+======================================================================
+
+               Website     Acc   ElemAcc   OpAcc   AvgCand  Steps  Ops
+                  yelp   0.0%    20.0%  60.0%     30.0     10  CLICK:7+TYPE:3
+              seatgeek   0.0%    20.0%  100.0%     30.0      5  CLICK:4+TYPE:1
+                  ebay   0.0%     0.0%  77.8%     30.0      9  CLICK:7+TYPE:2
+                amazon   0.0%     0.0%  55.6%     30.0      9  CLICK:9
+              sixflags   0.0%     0.0%  80.0%     30.0      5  CLICK:5
+               ryanair   0.0%     0.0%  91.7%     30.0     12  CLICK:12
+          ticketcenter   4.8%     4.8%  71.4%     30.1     21  CLICK:18+TYPE:3
+                newegg   5.3%     7.9%  52.6%     30.1     38  CLICK:34+TYPE:3+SELECT:1
+          thetrainline   7.7%    23.1%  46.2%     30.0     13  CLICK:9+TYPE:2+SELECT:2
+              cargurus   8.3%    16.7%  50.0%     30.0     12  SELECT:6+CLICK:4+TYPE:2
+               last.fm   9.1%     9.1%  81.8%     30.1     11  CLICK:9+TYPE:2
+                   rei   9.1%    18.2%  72.7%     30.0     11  CLICK:7+TYPE:4
+                  imdb  10.7%    10.7%  78.6%     30.0     28  CLICK:21+SELECT:4+TYPE:3
+          qatarairways  11.1%    11.1%  66.7%     30.1      9  CLICK:8+TYPE:1
+               menards  12.5%    18.8%  62.5%     30.0     16  CLICK:11+TYPE:5
+               booking  12.9%    19.4%  87.1%     30.1     31  CLICK:28+TYPE:3
+                   ign  14.3%    28.6%  85.7%     30.0      7  CLICK:5+SELECT:2
+            eventbrite  14.3%    28.6%  85.7%     30.1      7  CLICK:5+TYPE:1+SELECT:1
+                 kayak  14.7%    23.5%  79.4%     30.1     34  CLICK:30+TYPE:4
+              gamestop  15.4%    15.4%  92.3%     30.2     13  CLICK:12+TYPE:1
+                    aa  15.8%    21.1%  63.2%     30.1     19  CLICK:12+TYPE:5+SELECT:2
+                 kohls  17.4%    17.4%  73.9%     30.2     23  CLICK:22+TYPE:1
+                  resy  22.2%    33.3%  100.0%     30.0      9  CLICK:8+SELECT:1
+              spothero  28.6%    28.6%  71.4%     30.0      7  CLICK:5+TYPE:1+SELECT:1
+              marriott  29.4%    29.4%  70.6%     30.0     17  CLICK:14+TYPE:3
+                   cvs  37.5%    37.5%  75.0%     30.0      8  CLICK:6+TYPE:2
+
+======================================================================
+1. POSITIONAL BIAS — gpt-4.1-mini
+======================================================================
+
+  Predicted element index distribution (top 15):
+    [ 5]   23 (  5.7%) █████
+    [ 6]   20 (  4.9%) ████
+    [ 7]   20 (  4.9%) ████
+    [ 3]   20 (  4.9%) ████
+    [ 9]   20 (  4.9%) ████
+    [ 4]   20 (  4.9%) ████
+    [23]   18 (  4.4%) ████
+    [10]   17 (  4.2%) ████
+    [25]   17 (  4.2%) ████
+    [13]   16 (  3.9%) ███
+    [29]   16 (  3.9%) ███
+    [21]   16 (  3.9%) ███
+    [ 8]   16 (  3.9%) ███
+    [11]   14 (  3.4%) ███
+    [14]   14 (  3.4%) ███
+
+  Position bands:
+    Early [0-4]:     70 (17.2%)
+    Mid   [5-14]:   169 (41.5%)
+    Late  [15-29]:  168 (41.3%)
+    Invalid/OOB:      0 (0.0%)
+
+  Random baseline for early [0-4]: 16.6%
+  Model actual for early [0-4]:    17.2%
+  Bias ratio: 1.03x (>1 = favors early positions)
+
+======================================================================
+2. CANDIDATE COUNT vs ACCURACY — gpt-4.1-mini
+======================================================================
+
+    Candidates   Total   Correct   Accuracy
+         30-34     407       122     30.0%  ███████████
+
+======================================================================
+3. STEP POSITION vs ACCURACY — gpt-4.1-mini
+======================================================================
+
+    Step   Total   Correct   Accuracy
+       1      48        11     22.9%  █████████
+       2      48        13     27.1%  ██████████
+       3      48        12     25.0%  ██████████
+       4      36        11     30.6%  ████████████
+       5      36         9     25.0%  ██████████
+       6      27         6     22.2%  ████████
+       7      27         6     22.2%  ████████
+       8      22         5     22.7%  █████████
+       9      20         6     30.0%  ████████████
+      10      18         6     33.3%  █████████████
+      11      13         4     30.8%  ████████████
+      12      11         5     45.5%  ██████████████████
+      13      11         7     63.6%  █████████████████████████
+      14       9         3     33.3%  █████████████
+      15       7         5     71.4%  ████████████████████████████
+      16       6         3     50.0%  ████████████████████
+      17       5         3     60.0%  ████████████████████████
+      18       3         2     66.7%  ██████████████████████████
+
+  Step 1 accuracy: 22.9% (11/48)
+  Steps 2+ accuracy: 30.9% (111/359)
+
+======================================================================
+4. TAG CONFUSION MATRIX — gpt-4.1-mini
+======================================================================
+
+      Expected →    Predicted   Count       %
+             a →            a      48   18.9%
+        button →       button      20    7.9%
+           div →          div      13    5.1%
+             a →          div      12    4.7%
+        button →            a      11    4.3%
+             a →       button      10    3.9%
+             a →           li       8    3.1%
+         input →            a       8    3.1%
+         label →          div       7    2.8%
+         label →        input       6    2.4%
+           div →       button       6    2.4%
+        button →        input       5    2.0%
+        button →           li       4    1.6%
+             a →        input       4    1.6%
+            li →          div       4    1.6%
+           img →            a       4    1.6%
+          span →          div       4    1.6%
+           svg →            a       3    1.2%
+           div →           li       3    1.2%
+         input →          div       3    1.2%
+
+======================================================================
+5. OPERATION CONFUSION DETAIL — gpt-4.1-mini
+======================================================================
+
+                  Confusion   Count
+               CLICK → TYPE       8
+    marriott: Find The Ritz-Carlton hotels in Washington DC that can hold 
+    Action: [textbox]  Start Date -> CLICK
+    thetrainline: Find tickets from Edinburgh Waverly to Glagsgow Central on M
+    Action: [combobox]  Departure station, none selected. Select a station... -> CLICK
+
+======================================================================
+6. VALUE ERROR ANALYSIS — gpt-4.1-mini
+======================================================================
+
+  Total value errors: 23
+
+  Value error types:
+    over_specified                   14 (61%)
+    partial_word_overlap              4 (17%)
+    under_specified                   3 (13%)
+    completely_different              2 (9%)
+
+  Examples (gt_value → pred_value):
+    "1 Ticket" → "1"
+      resy: Make a reservation for the next restaurant-related
+    "Ariana Grande" → "Ariana Grande most popular solo track"
+      last.fm: Find the all time most popular solo track by Arian
+    "washington" → "Washington DC"
+      marriott: Find The Ritz-Carlton hotels in Washington DC that
+    "lenovo laptop" → "Lenovo under 800"
+      newegg: Find a Lenovo laptop under $800 and create a price
+    "Chicago" → "Chicago, IL"
+      seatgeek: Search for comedy shows taking place in Chicago, I
+    "Nintendo Switch Console" → "Nintendo Switch used under 400 working"
+      ebay: Find the cheapest used and working  Nintendo Switc
+    "Edinburgh" → "Edinburgh Waverly"
+      thetrainline: Find tickets from Edinburgh Waverly to Glagsgow Ce
+    "Glasgow" → "Glasgow Central"
+      thetrainline: Find tickets from Edinburgh Waverly to Glagsgow Ce
+
+======================================================================
+9. RESPONSE FORMAT QUALITY — gpt-4.1-mini
+======================================================================
+
+  Total responses: 407
+  Empty responses: 0 (0.0%)
+  Has 'Element:' line: 407 (100.0%)
+  Has 'Operation:' line: 407 (100.0%)
+  Has 'Value:' line: 407 (100.0%)
+  All three fields: 407 (100.0%)
+  Contains thinking/reasoning: 0 (0.0%)
+  Extra text (>3 lines): 2 (0.5%)
+
+======================================================================
+10. ERROR CASCADE — gpt-4.1-mini
+======================================================================
+
+  P(correct | previous step correct): 35.7%
+  P(correct | previous step wrong):   29.3%
+
+  → Error recovery rate: 29.3%
+
+  Consecutive error streaks:
+    Average length: 2.6 steps
+    Max length: 10 steps
+    1 steps: 36 times
+    2 steps: 20 times
+    3 steps: 13 times
+    4 steps: 10 times
+    5 steps: 6 times
+    6 steps: 3 times
+    7 steps: 1 times
+    8 steps: 2 times
+
+======================================================================
+12. WEBSITE COMPLEXITY — gpt-4.1-mini
+======================================================================
+
+               Website     Acc   ElemAcc   OpAcc   AvgCand  Steps  Ops
+                  ebay   0.0%    11.1%  88.9%     30.0      9  CLICK:7+TYPE:2
+            eventbrite   0.0%    14.3%  85.7%     30.1      7  CLICK:5+TYPE:1+SELECT:1
+                amazon  11.1%    11.1%  100.0%     30.0      9  CLICK:9
+                   ign  14.3%    28.6%  100.0%     30.0      7  CLICK:5+SELECT:2
+              gamestop  15.4%    23.1%  100.0%     30.2     13  CLICK:12+TYPE:1
+               ryanair  16.7%    16.7%  100.0%     30.0     12  CLICK:12
+          ticketcenter  19.0%    33.3%  95.2%     30.1     21  CLICK:18+TYPE:3
+                  yelp  20.0%    30.0%  90.0%     30.0     10  CLICK:7+TYPE:3
+              seatgeek  20.0%    40.0%  100.0%     30.0      5  CLICK:4+TYPE:1
+              marriott  23.5%    35.3%  70.6%     30.0     17  CLICK:14+TYPE:3
+               last.fm  27.3%    36.4%  100.0%     30.1     11  CLICK:9+TYPE:2
+                 kayak  29.4%    38.2%  85.3%     30.1     34  CLICK:30+TYPE:4
+          thetrainline  30.8%    69.2%  61.5%     30.0     13  CLICK:9+TYPE:2+SELECT:2
+               menards  31.2%    43.8%  93.8%     30.0     16  CLICK:11+TYPE:5
+                newegg  31.6%    34.2%  92.1%     30.1     38  CLICK:34+TYPE:3+SELECT:1
+                  imdb  32.1%    35.7%  82.1%     30.0     28  CLICK:21+SELECT:4+TYPE:3
+          qatarairways  33.3%    33.3%  88.9%     30.1      9  CLICK:8+TYPE:1
+                 kohls  34.8%    34.8%  100.0%     30.2     23  CLICK:22+TYPE:1
+                    aa  36.8%    42.1%  78.9%     30.1     19  CLICK:12+TYPE:5+SELECT:2
+                   cvs  37.5%    37.5%  100.0%     30.0      8  CLICK:6+TYPE:2
+              sixflags  40.0%    40.0%  100.0%     30.0      5  CLICK:5
+               booking  41.9%    51.6%  96.8%     30.1     31  CLICK:28+TYPE:3
+              spothero  42.9%    57.1%  57.1%     30.0      7  CLICK:5+TYPE:1+SELECT:1
+                  resy  44.4%    55.6%  100.0%     30.0      9  CLICK:8+SELECT:1
+                   rei  54.5%    54.5%  100.0%     30.0     11  CLICK:7+TYPE:4
+              cargurus  58.3%    66.7%  75.0%     30.0     12  SELECT:6+CLICK:4+TYPE:2
+
+======================================================================
+7. CROSS-MODEL AGREEMENT
+======================================================================
+
+  Compared 407 common steps between Qwen/Qwen2.5-7B-Instruct-Turbo and gpt-4.1-mini
+
+                                          gpt-4.1-mini
+                                     Correct      Wrong
+  Qwen/Qwen2.5-7B-Inst Correct          38          9
+                       Wrong            84        276
+
+  Both correct:         38 (9.3%) — easy steps
+  Both wrong:          276 (67.8%) — genuinely hard steps
+  Only Qwen/Qwen2.5-7B right:    9 (2.2%)
+  Only gpt-4.1-mini right:   84 (20.6%)
+
+  Domains where BOTH models fail most:
+    Travel                115
+    Shopping               96
+    Entertainment          65
+
+  Websites where BOTH models fail most:
+    newegg                      26
+    kayak                       22
+    imdb                        19
+    ticketcenter                17
+    booking                     17
+    kohls                       15
+    marriott                    12
+    gamestop                    11
+    aa                          11
+    menards                     11
+
+  When both fail, do they pick the SAME wrong element?
+    Same wrong element:   81 (29.3%)
+    Different wrong:     195 (70.7%)
+
+======================================================================
+8. DOMAIN DIFFICULTY ANALYSIS
+======================================================================
+
+  --- Qwen/Qwen2.5-7B-Instruct-Turbo ---
+
+                Domain      Acc   Correct   Total  Sites
+         Entertainment    9.2%         8      87  espn, eventbrite, ign
+              Shopping   11.2%        16     143  amazon, apple, cargurus
+                Travel   13.0%        23     177  aa, amtrak, booking
+
+  --- gpt-4.1-mini ---
+
+                Domain      Acc   Correct   Total  Sites
+         Entertainment   24.1%        21      87  espn, eventbrite, ign
+              Shopping   31.5%        45     143  amazon, apple, cargurus
+                Travel   31.6%        56     177  aa, amtrak, booking
+
+======================================================================
+11. HARDEST TASKS (across all models)
+======================================================================
+
+  Tasks where ALL models scored 0% (9 tasks):
+    [9 steps] ebay: Find the cheapest used and working  Nintendo Switch for under $40
+    [6 steps] last.fm: Find the all time most popular solo track by ArianaGrande
+    [5 steps] yelp: Search for Mexican restaurants in Concord, CA and start an order 
+    [5 steps] ticketcenter: Find the most expensive ticket for New York Knicks game on April 
+    [5 steps] newegg: Find the cheapest power supply unit with at least 600W power outp
+    [4 steps] store.steampowered: Add the ghost frame to your avatar using steam points.
+    [4 steps] ign: Show computer game reviews sorted by score.
+    [3 steps] nps.gov: Search for a park in the state of California called Castle Mounta
+    [3 steps] imdb: Play Trailer of "The Flash" 2023.
+
+  Tasks with biggest accuracy gap between models:
+    [33% / 100%] cargurus: Show all used Tesla cars for 10017 zip code.
+    [25% / 75%] kohls: Add a pair of diamond stud earrings to the cart.
+    [25% / 75%] espn: check the 2022 highest goal scorer in the MLS league
+    [9% / 55%] rei: Trade in a Nemo Front Porch 2P Tent via mail with my me
+    [0% / 44%] cargurus: Check the lowest price for a white 2017 certified pre o
+    [0% / 40%] yelp: Find the most reviewed cocktail bar with outdoor seatin
+    [0% / 40%] sixflags: Show me all the events at any six flags park in Texas
+    [20% / 60%] resy: Make a reservation for the next restaurant-related even
+    [20% / 60%] last.fm: Search for the artist profile of M S Subbulakshmi and p
+    [0% / 38%] ticketcenter: Find the list of off-Broadway theatre shows on April 19
+
+======================================================================
+KEY FINDINGS — SYNTHESIS
+======================================================================
+  Qwen/Qwen2.5-7B-Instruct-Turbo: 11.5% step accuracy, 84.0% element selection failure rate
+  gpt-4.1-mini: 30.0% step accuracy, 62.4% element selection failure rate
+
+  Cross-model: 67.8% of steps are hard for ALL models
+  → These are the steps that need better representations, not just better models
+
+
+Re-run with: python3 deep_analysis.py > results/deep_analysis.txt

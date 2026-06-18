@@ -1,0 +1,2165 @@
+{
+  "model": "Qwen/Qwen2.5-7B-Instruct-Turbo",
+  "total_steps": 407,
+  "correct_steps": 47,
+  "accuracy": 0.11547911547911548,
+  "num_failures": 360,
+  "high_level_categories": {
+    "wrong_element": 338,
+    "op_confusion": 8,
+    "value_wrong": 2,
+    "value_partial_match": 8,
+    "parse_failure": 4,
+    "unknown": 0
+  },
+  "detailed_modes": {
+    "wrong_element:a_vs_div": 31,
+    "wrong_element:same_tag_a": 28,
+    "wrong_element:button_vs_div": 19,
+    "wrong_element:same_tag_div": 17,
+    "wrong_element:button_vs_a": 12,
+    "wrong_element:input_vs_div": 12,
+    "wrong_element:a_vs_li": 10,
+    "wrong_element:input_vs_a": 10,
+    "wrong_element:same_tag_button": 10,
+    "wrong_element:label_vs_div": 9,
+    "value_partial_match": 8,
+    "wrong_element:select_vs_div": 8,
+    "wrong_element:button_vs_label": 8,
+    "wrong_element:button_vs_td": 7,
+    "wrong_element:a_vs_ul": 7,
+    "wrong_element:same_tag_input": 7,
+    "wrong_element:input_vs_li": 7,
+    "wrong_element:button_vs_li": 7,
+    "wrong_element:svg_vs_div": 5,
+    "op_confusion:typed_instead_of_clicked": 5,
+    "wrong_element:button_vs_input": 5,
+    "wrong_element:a_vs_button": 4,
+    "wrong_element:button_vs_span": 4,
+    "wrong_element:td_vs_a": 4,
+    "wrong_element:li_vs_div": 4,
+    "wrong_element:span_vs_a": 4,
+    "parse_failure": 4,
+    "wrong_element:input_vs_button": 4,
+    "wrong_element:a_vs_img": 4,
+    "wrong_element:a_vs_input": 3,
+    "wrong_element:label_vs_input": 3,
+    "wrong_element:span_vs_div": 3,
+    "wrong_element:label_vs_a": 3,
+    "op_confusion:selected_instead_of_clicked": 3,
+    "wrong_element:img_vs_a": 2,
+    "wrong_element:div_vs_button": 2,
+    "wrong_element:button_vs_form": 2,
+    "wrong_element:a_vs_svg": 2,
+    "wrong_element:li_vs_ul": 2,
+    "wrong_element:img_vs_li": 2,
+    "wrong_element:a_vs_section": 2,
+    "wrong_element:button_vs_select": 2,
+    "wrong_element:input_vs_select": 2,
+    "wrong_element:same_tag_select": 2,
+    "wrong_element:svg_vs_a": 2,
+    "wrong_element:label_vs_button": 2,
+    "wrong_element:li_vs_a": 2,
+    "wrong_element:label_vs_li": 2,
+    "value_wrong": 2,
+    "wrong_element:span_vs_td": 2,
+    "wrong_element:div_vs_a": 2,
+    "wrong_element:svg_vs_li": 2,
+    "wrong_element:div_vs_img": 2,
+    "wrong_element:same_tag_span": 2,
+    "wrong_element:td_vs_section": 1,
+    "wrong_element:td_vs_div": 1,
+    "wrong_element:a_vs_h3": 1,
+    "wrong_element:div_vs_ul": 1,
+    "wrong_element:input_vs_adc-text-input": 1,
+    "wrong_element:adc-button_vs_li": 1,
+    "wrong_element:same_tag_li": 1,
+    "wrong_element:button_vs_tr": 1,
+    "wrong_element:input_vs_tr": 1,
+    "wrong_element:same_tag_td": 1,
+    "wrong_element:input_vs_table": 1,
+    "wrong_element:td_vs_li": 1,
+    "wrong_element:input_vs_ul": 1,
+    "wrong_element:li_vs_button": 1,
+    "wrong_element:select_vs_button": 1,
+    "wrong_element:textarea_vs_a": 1,
+    "wrong_element:input_vs_td": 1,
+    "wrong_element:select_vs_input": 1,
+    "wrong_element:div_vs_input": 1,
+    "wrong_element:div_vs_label": 1,
+    "wrong_element:input_vs_svg": 1,
+    "wrong_element:label_vs_span": 1,
+    "wrong_element:a_vs_p": 1,
+    "wrong_element:button_vs_section": 1,
+    "wrong_element:a_vs_td": 1,
+    "wrong_element:a_vs_tr": 1,
+    "wrong_element:input_vs_span": 1,
+    "wrong_element:li_vs_span": 1,
+    "wrong_element:strong_vs_div": 1,
+    "wrong_element:svg_vs_section": 1,
+    "wrong_element:input_vs_fsw-flight-search-widget": 1,
+    "wrong_element:fsw-airport-item_vs_div": 1,
+    "wrong_element:fsw-input-button_vs_input": 1,
+    "wrong_element:div_vs_fsw-input-button": 1,
+    "wrong_element:button_vs_fsw-flight-search-widget-controls": 1,
+    "wrong_element:button_vs_flight-price": 1,
+    "wrong_element:div_vs_li": 1,
+    "wrong_element:select_vs_td": 1,
+    "wrong_element:input_vs_img": 1,
+    "wrong_element:img_vs_button": 1,
+    "wrong_element:i_vs_a": 1
+  },
+  "examples": {
+    "wrong_element:a_vs_button": [
+      {
+        "website": "resy",
+        "task": "Book a table for 2 at a restaurant that was featured on the latest Hit List",
+        "step": 1,
+        "action_repr": "[link]  The Hit List -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <button>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "resy",
+        "task": "Make a reservation for the next restaurant-related event, only 1 ticket is neede",
+        "step": 1,
+        "action_repr": "[link]  See more venues in the Special Events &amp; Experi... -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <button>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "store.steampowered",
+        "task": "Add the ghost frame to your avatar using steam points.",
+        "step": 2,
+        "action_repr": "[link]  POINTS SHOP -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <button>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:same_tag_a": [
+      {
+        "website": "resy",
+        "task": "Book a table for 2 at a restaurant that was featured on the latest Hit List",
+        "step": 3,
+        "action_repr": "[link]  Book Now\ue90b -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <a>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "last.fm",
+        "task": "Find the all time most popular solo track by ArianaGrande",
+        "step": 6,
+        "action_repr": "[link]  All time -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <a>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "instacart",
+        "task": "Find the push notification settings",
+        "step": 2,
+        "action_repr": "[link]  Your account settings -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <a>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:button_vs_a": [
+      {
+        "website": "resy",
+        "task": "Book a table for 2 at a restaurant that was featured on the latest Hit List",
+        "step": 5,
+        "action_repr": "[button]  Reserve Now -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <a>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "last.fm",
+        "task": "Find the all time most popular solo track by ArianaGrande",
+        "step": 3,
+        "action_repr": "[button]  Search -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <a>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "marriott",
+        "task": "Find The Ritz-Carlton hotels in Washington DC that can hold a student social eve",
+        "step": 17,
+        "action_repr": "[button]  APPLY -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <a>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:a_vs_div": [
+      {
+        "website": "resy",
+        "task": "Make a reservation for the next restaurant-related event, only 1 ticket is neede",
+        "step": 2,
+        "action_repr": "[link]  HAPPY HOUR BURGER, Aria, Thursday, April 13, 2023 ... -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <div>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "yelp",
+        "task": "Find the most reviewed cocktail bar with outdoor seating for reservation in San ",
+        "step": 2,
+        "action_repr": "[span]  Reservations -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <div>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "kayak",
+        "task": "Find vacation packages to Hawaii.",
+        "step": 2,
+        "action_repr": "[link]  Hawaii Vacations -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <div>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "value_partial_match": [
+      {
+        "website": "resy",
+        "task": "Make a reservation for the next restaurant-related event, only 1 ticket is neede",
+        "step": 3,
+        "action_repr": "[combobox]  2 tickets for HAPPY HOUR BURGER -> SELECT: 1 Ticket",
+        "gt": "SELECT on <select>",
+        "pred": "SELECT on <select>",
+        "gt_value": "1 Ticket",
+        "pred_value": "1"
+      },
+      {
+        "website": "seatgeek",
+        "task": "Search for comedy shows taking place in Chicago, IL and expand the results once.",
+        "step": 2,
+        "action_repr": "[searchbox]  Search by city... -> TYPE: Chicago",
+        "gt": "TYPE on <input>",
+        "pred": "TYPE on <input>",
+        "gt_value": "Chicago",
+        "pred_value": "Chicago, IL"
+      },
+      {
+        "website": "thetrainline",
+        "task": "Find tickets from Edinburgh Waverly to Glagsgow Central on May 18, leaving neare",
+        "step": 2,
+        "action_repr": "[combobox]  Departure station, none selected. Select a station... -> TYPE: Edinburgh",
+        "gt": "TYPE on <input>",
+        "pred": "TYPE on <input>",
+        "gt_value": "Edinburgh",
+        "pred_value": "Edinburgh Waverly"
+      }
+    ],
+    "wrong_element:button_vs_span": [
+      {
+        "website": "resy",
+        "task": "Make a reservation for the next restaurant-related event, only 1 ticket is neede",
+        "step": 5,
+        "action_repr": "[button]  Reserve Now -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <span>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "booking",
+        "task": "Find the lowest-priced round trip flight with hotel on May 2 from Kathmandu, Nep",
+        "step": 10,
+        "action_repr": "[button]  Recommended -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "TYPE on <span>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "booking",
+        "task": "Find the lowest-priced round trip flight with hotel on May 2 from Kathmandu, Nep",
+        "step": 14,
+        "action_repr": "[button]  Book Business Double Room A -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <span>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:a_vs_li": [
+      {
+        "website": "last.fm",
+        "task": "Find the all time most popular solo track by ArianaGrande",
+        "step": 1,
+        "action_repr": "[link]  Search -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <li>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "marriott",
+        "task": "Find The Ritz-Carlton hotels in Washington DC that can hold a student social eve",
+        "step": 1,
+        "action_repr": "[button]  Meetings & Events -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "SELECT on <li>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "marriott",
+        "task": "Find The Ritz-Carlton hotels in Washington DC that can hold a student social eve",
+        "step": 2,
+        "action_repr": "[link]  Group Travel -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <li>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:input_vs_a": [
+      {
+        "website": "last.fm",
+        "task": "Find the all time most popular solo track by ArianaGrande",
+        "step": 2,
+        "action_repr": "[textbox]  Search -> TYPE: Ariana Grande",
+        "gt": "TYPE on <input>",
+        "pred": "CLICK on <a>",
+        "gt_value": "Ariana Grande",
+        "pred_value": ""
+      },
+      {
+        "website": "ebay",
+        "task": "Find the cheapest used and working  Nintendo Switch for under $400 that can be b",
+        "step": 1,
+        "action_repr": "[combobox]  Search for anything -> TYPE: Nintendo Switch Console",
+        "gt": "TYPE on <input>",
+        "pred": "CLICK on <a>",
+        "gt_value": "Nintendo Switch Console",
+        "pred_value": ""
+      },
+      {
+        "website": "ebay",
+        "task": "Find the cheapest used and working  Nintendo Switch for under $400 that can be b",
+        "step": 3,
+        "action_repr": "[textbox]  Maximum Value in $ -> TYPE: 400",
+        "gt": "TYPE on <input>",
+        "pred": "CLICK on <a>",
+        "gt_value": "400",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:button_vs_td": [
+      {
+        "website": "last.fm",
+        "task": "Find the all time most popular solo track by ArianaGrande",
+        "step": 5,
+        "action_repr": "[button]  Sorted by: Last 7 days -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <td>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "ticketcenter",
+        "task": "Find the list of off-Broadway theatre shows on April 19",
+        "step": 8,
+        "action_repr": "[button]  Apply -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <td>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "menards",
+        "task": "Find Maytag electric dryers that are at least 7.3 cubic foot costing less than $",
+        "step": 9,
+        "action_repr": "[button]  Maytag in Electric Dryers -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <td>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:td_vs_a": [
+      {
+        "website": "last.fm",
+        "task": "Find the all time most popular solo track by ArianaGrande",
+        "step": 7,
+        "action_repr": "[gridcell]  7 rings -> CLICK",
+        "gt": "CLICK on <td>",
+        "pred": "CLICK on <a>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "qatarairways",
+        "task": "Find a hotel in Las Vegas that will cost two people the least for a week startin",
+        "step": 6,
+        "action_repr": "[gridcell]  16 April 2023 -> CLICK",
+        "gt": "CLICK on <td>",
+        "pred": "CLICK on <a>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "booking",
+        "task": "Find an entire home with a rating above 5 for two in Manila, Philippines from Ju",
+        "step": 5,
+        "action_repr": "[gridcell]  1 June 2023 -> CLICK",
+        "gt": "CLICK on <td>",
+        "pred": "CLICK on <a>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:a_vs_ul": [
+      {
+        "website": "instacart",
+        "task": "Find the push notification settings",
+        "step": 3,
+        "action_repr": "[link]  Notification settings -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <ul>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "yelp",
+        "task": "Find the most reviewed cocktail bar with outdoor seating for reservation in San ",
+        "step": 1,
+        "action_repr": "[link]  Restaurants -> HOVER",
+        "gt": "CLICK on <a>",
+        "pred": "SELECT on <ul>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "yelp",
+        "task": "Find the most reviewed cocktail bar with outdoor seating for reservation in San ",
+        "step": 7,
+        "action_repr": "[button]  Recommended -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <ul>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:same_tag_input": [
+      {
+        "website": "marriott",
+        "task": "Find The Ritz-Carlton hotels in Washington DC that can hold a student social eve",
+        "step": 4,
+        "action_repr": "[textbox]  Destination -> TYPE: washington",
+        "gt": "TYPE on <input>",
+        "pred": "TYPE on <input>",
+        "gt_value": "washington",
+        "pred_value": "2023-05-12"
+      },
+      {
+        "website": "marriott",
+        "task": "Find The Ritz-Carlton hotels in Washington DC that can hold a student social eve",
+        "step": 6,
+        "action_repr": "[textbox]  Start Date -> CLICK",
+        "gt": "CLICK on <input>",
+        "pred": "TYPE on <input>",
+        "gt_value": "",
+        "pred_value": "50"
+      },
+      {
+        "website": "menards",
+        "task": "Find Maytag electric dryers that are at least 7.3 cubic foot costing less than $",
+        "step": 16,
+        "action_repr": "[button]  GO -> CLICK",
+        "gt": "CLICK on <input>",
+        "pred": "CLICK on <input>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:a_vs_input": [
+      {
+        "website": "marriott",
+        "task": "Find The Ritz-Carlton hotels in Washington DC that can hold a student social eve",
+        "step": 5,
+        "action_repr": "[menuitem]  Washington D.C., DC, USA -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "TYPE on <input>",
+        "gt_value": "",
+        "pred_value": "7"
+      },
+      {
+        "website": "qatarairways",
+        "task": "Find a hotel in Las Vegas that will cost two people the least for a week startin",
+        "step": 1,
+        "action_repr": "[button]  Book -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "TYPE on <input>",
+        "gt_value": "",
+        "pred_value": "10 Apr 23"
+      },
+      {
+        "website": "kohls",
+        "task": "Get the lowest priced plus size one piece active swimsuit in color black.",
+        "step": 2,
+        "action_repr": "[link]  Women -> HOVER",
+        "gt": "CLICK on <a>",
+        "pred": "TYPE on <input>",
+        "gt_value": "",
+        "pred_value": "plus size one piece active swimsuit black"
+      }
+    ],
+    "wrong_element:td_vs_section": [
+      {
+        "website": "marriott",
+        "task": "Find The Ritz-Carlton hotels in Washington DC that can hold a student social eve",
+        "step": 8,
+        "action_repr": "[gridcell]  Tue, May 9, 2023 -> CLICK",
+        "gt": "CLICK on <td>",
+        "pred": "CLICK on <section>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:td_vs_div": [
+      {
+        "website": "marriott",
+        "task": "Find The Ritz-Carlton hotels in Washington DC that can hold a student social eve",
+        "step": 9,
+        "action_repr": "[gridcell]  Fri, May 12, 2023 -> CLICK",
+        "gt": "CLICK on <td>",
+        "pred": "CLICK on <div>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:label_vs_input": [
+      {
+        "website": "marriott",
+        "task": "Find The Ritz-Carlton hotels in Washington DC that can hold a student social eve",
+        "step": 10,
+        "action_repr": "[div]  Purpose of your event -> CLICK",
+        "gt": "CLICK on <label>",
+        "pred": "TYPE on <input>",
+        "gt_value": "",
+        "pred_value": "50"
+      },
+      {
+        "website": "aa",
+        "task": "Book a first class vacation travel for 2 adults from San Francisco to New york l",
+        "step": 1,
+        "action_repr": "[span]  Vacation packages -> CLICK",
+        "gt": "CLICK on <label>",
+        "pred": "TYPE on <input>",
+        "gt_value": "",
+        "pred_value": "04/19"
+      },
+      {
+        "website": "aa",
+        "task": "Book a first class vacation travel for 2 adults from San Francisco to New york l",
+        "step": 6,
+        "action_repr": "[combobox]  Number of passengers -> SELECT: 2",
+        "gt": "SELECT on <label>",
+        "pred": "TYPE on <input>",
+        "gt_value": "2",
+        "pred_value": "04/19"
+      }
+    ],
+    "wrong_element:li_vs_div": [
+      {
+        "website": "marriott",
+        "task": "Find The Ritz-Carlton hotels in Washington DC that can hold a student social eve",
+        "step": 11,
+        "action_repr": "[li]  Social -> CLICK",
+        "gt": "CLICK on <li>",
+        "pred": "TYPE on <div>",
+        "gt_value": "",
+        "pred_value": "Social Event"
+      },
+      {
+        "website": "cvs",
+        "task": "Add zyrtec to the cart for pickup at the nearest CVS to zip code 90028",
+        "step": 2,
+        "action_repr": "[button]  Search for zyrtec -> CLICK",
+        "gt": "CLICK on <li>",
+        "pred": "TYPE on <div>",
+        "gt_value": "",
+        "pred_value": "90028"
+      },
+      {
+        "website": "kayak",
+        "task": "Search for the cheapest two rooms near Kashi Vishwanath Temple in India for thre",
+        "step": 21,
+        "action_repr": "[tab]  Price (low to high) -> CLICK",
+        "gt": "CLICK on <li>",
+        "pred": "CLICK on <div>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:span_vs_a": [
+      {
+        "website": "marriott",
+        "task": "Find The Ritz-Carlton hotels in Washington DC that can hold a student social eve",
+        "step": 15,
+        "action_repr": "[generic]  Brand -> CLICK",
+        "gt": "CLICK on <span>",
+        "pred": "CLICK on <a>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "kayak",
+        "task": "Search for the cheapest two rooms near Kashi Vishwanath Temple in India for thre",
+        "step": 10,
+        "action_repr": "[span]  0 -> TYPE: 7",
+        "gt": "TYPE on <span>",
+        "pred": "CLICK on <a>",
+        "gt_value": "7",
+        "pred_value": ""
+      },
+      {
+        "website": "booking",
+        "task": "Find the lowest-priced round trip flight with hotel on May 2 from Kathmandu, Nep",
+        "step": 6,
+        "action_repr": "[span]  Sat 8 Apr - Sat 15 Apr -> CLICK",
+        "gt": "CLICK on <span>",
+        "pred": "CLICK on <a>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:input_vs_div": [
+      {
+        "website": "yelp",
+        "task": "Find the most reviewed cocktail bar with outdoor seating for reservation in San ",
+        "step": 3,
+        "action_repr": "[textbox]  Near -> TYPE: SAN FRANCISCO",
+        "gt": "TYPE on <input>",
+        "pred": "CLICK on <div>",
+        "gt_value": "SAN FRANCISCO",
+        "pred_value": ""
+      },
+      {
+        "website": "newegg",
+        "task": "Find a Lenovo laptop under $800 and create a price alert for $400.",
+        "step": 1,
+        "action_repr": "[searchbox]  Search Site -> TYPE: lenovo laptop",
+        "gt": "TYPE on <input>",
+        "pred": "SELECT on <div>",
+        "gt_value": "lenovo laptop",
+        "pred_value": ""
+      },
+      {
+        "website": "cargurus",
+        "task": "Show all used Tesla cars for 10017 zip code.",
+        "step": 2,
+        "action_repr": "[textbox]  Zip -> TYPE: 10017",
+        "gt": "TYPE on <input>",
+        "pred": "SELECT on <div>",
+        "gt_value": "10017",
+        "pred_value": "10017"
+      }
+    ],
+    "wrong_element:button_vs_div": [
+      {
+        "website": "yelp",
+        "task": "Find the most reviewed cocktail bar with outdoor seating for reservation in San ",
+        "step": 8,
+        "action_repr": "[span]  Most Reviewed -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <div>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "kayak",
+        "task": "Find vacation packages to Hawaii.",
+        "step": 3,
+        "action_repr": "[button]  Search packages -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <div>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "qatarairways",
+        "task": "Find a hotel in Las Vegas that will cost two people the least for a week startin",
+        "step": 8,
+        "action_repr": "[button]  Sort by:Our Top Picks -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <div>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:svg_vs_div": [
+      {
+        "website": "ign",
+        "task": "Show popular news which is at number one in comics.",
+        "step": 1,
+        "action_repr": "[button]  News -> CLICK",
+        "gt": "CLICK on <svg>",
+        "pred": "CLICK on <div>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "menards",
+        "task": "Find Maytag electric dryers that are at least 7.3 cubic foot costing less than $",
+        "step": 1,
+        "action_repr": "[button]  COLUMBUS, OH  -> CLICK",
+        "gt": "CLICK on <svg>",
+        "pred": "SELECT on <div>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "menards",
+        "task": "Find Maytag electric dryers that are at least 7.3 cubic foot costing less than $",
+        "step": 2,
+        "action_repr": "[path]   -> CLICK",
+        "gt": "CLICK on <svg>",
+        "pred": "CLICK on <div>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:a_vs_h3": [
+      {
+        "website": "ign",
+        "task": "Show popular news which is at number one in comics.",
+        "step": 3,
+        "action_repr": "[link]  Dec 1, 2022 The 10 Best Star Wars Video Games of A... -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <h3>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:img_vs_a": [
+      {
+        "website": "cvs",
+        "task": "Add zyrtec to the cart for pickup at the nearest CVS to zip code 90028",
+        "step": 3,
+        "action_repr": "[img]  Zyrtec 24 Hour Allergy Relief Tablets with 10 mg C... -> CLICK",
+        "gt": "CLICK on <img>",
+        "pred": "CLICK on <a>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "kohls",
+        "task": "Add a pair of diamond stud earrings to the cart.",
+        "step": 3,
+        "action_repr": "[img]  10k Gold 1 Carat T.W. Black Diamond Stud Earrings -> CLICK",
+        "gt": "CLICK on <img>",
+        "pred": "CLICK on <a>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:input_vs_li": [
+      {
+        "website": "cvs",
+        "task": "Add zyrtec to the cart for pickup at the nearest CVS to zip code 90028",
+        "step": 5,
+        "action_repr": "[textbox]  Enter zip code or location. Please enter a valid l... -> TYPE: 90028",
+        "gt": "TYPE on <input>",
+        "pred": "CLICK on <li>",
+        "gt_value": "90028",
+        "pred_value": ""
+      },
+      {
+        "website": "ebay",
+        "task": "Find the cheapest used and working  Nintendo Switch for under $400 that can be b",
+        "step": 2,
+        "action_repr": "[button]  Search -> CLICK",
+        "gt": "CLICK on <input>",
+        "pred": "CLICK on <li>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "ebay",
+        "task": "Find the cheapest used and working  Nintendo Switch for under $400 that can be b",
+        "step": 5,
+        "action_repr": "[input]   -> CLICK",
+        "gt": "CLICK on <input>",
+        "pred": "CLICK on <li>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:div_vs_button": [
+      {
+        "website": "cvs",
+        "task": "Add zyrtec to the cart for pickup at the nearest CVS to zip code 90028",
+        "step": 7,
+        "action_repr": "[generic]  6201 Hollywood Blvd., Suite 126 -> CLICK",
+        "gt": "CLICK on <div>",
+        "pred": "CLICK on <button>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "cvs",
+        "task": "Add zyrtec to the cart for pickup at the nearest CVS to zip code 90028",
+        "step": 8,
+        "action_repr": "[button]  In Stock at 6201 Hollywood Blvd., Suite 126. 0.2 m... -> CLICK",
+        "gt": "CLICK on <div>",
+        "pred": "CLICK on <button>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:button_vs_form": [
+      {
+        "website": "nps.gov",
+        "task": "Search for a park in the state of California called Castle Mountains National Mo",
+        "step": 1,
+        "action_repr": "[button]  Find a Park by State -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "TYPE on <form>",
+        "gt_value": "",
+        "pred_value": "Castle Mountains National Monument California"
+      },
+      {
+        "website": "rei",
+        "task": "Trade in a Nemo Front Porch 2P Tent via mail with my membership info Joe Bloggs,",
+        "step": 11,
+        "action_repr": "[button]  Proceed to checkout -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <form>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:a_vs_svg": [
+      {
+        "website": "kayak",
+        "task": "Find vacation packages to Hawaii.",
+        "step": 1,
+        "action_repr": "[link]  Search for packages -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <svg>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "imdb",
+        "task": "Play Trailer of \"The Flash\" 2023.",
+        "step": 3,
+        "action_repr": "[div]  The Flash -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <svg>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:div_vs_ul": [
+      {
+        "website": "newegg",
+        "task": "Find a Lenovo laptop under $800 and create a price alert for $400.",
+        "step": 3,
+        "action_repr": "[div]  Newest Lenovo Ideapad 3i Laptop, 14\" FHD Display, ... -> CLICK",
+        "gt": "CLICK on <div>",
+        "pred": "CLICK on <ul>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:same_tag_button": [
+      {
+        "website": "newegg",
+        "task": "Find a Lenovo laptop under $800 and create a price alert for $400.",
+        "step": 6,
+        "action_repr": "[button]  SUBMIT -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <button>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "seatgeek",
+        "task": "Search for comedy shows taking place in Chicago, IL and expand the results once.",
+        "step": 1,
+        "action_repr": "[button]  Change Location -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <button>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "thetrainline",
+        "task": "Find tickets from Edinburgh Waverly to Glagsgow Central on May 18, leaving neare",
+        "step": 12,
+        "action_repr": "[button]  Add railcard -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <button>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:li_vs_ul": [
+      {
+        "website": "seatgeek",
+        "task": "Search for comedy shows taking place in Chicago, IL and expand the results once.",
+        "step": 3,
+        "action_repr": "[option]  Chicago, IL -> CLICK",
+        "gt": "CLICK on <li>",
+        "pred": "CLICK on <ul>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "thetrainline",
+        "task": "Find tickets from Edinburgh Waverly to Glagsgow Central on May 18, leaving neare",
+        "step": 3,
+        "action_repr": "[span]  Edinburgh (Waverley) -> CLICK",
+        "gt": "CLICK on <li>",
+        "pred": "SELECT on <ul>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:img_vs_li": [
+      {
+        "website": "seatgeek",
+        "task": "Search for comedy shows taking place in Chicago, IL and expand the results once.",
+        "step": 5,
+        "action_repr": "[img]  Comedy -> CLICK",
+        "gt": "CLICK on <img>",
+        "pred": "CLICK on <li>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "newegg",
+        "task": "Find the cheapest power supply unit with at least 600W power output.",
+        "step": 5,
+        "action_repr": "[img]  Hercules DUAL FAN 600w-Max ATX Power Supply SATA, ... -> CLICK",
+        "gt": "CLICK on <img>",
+        "pred": "CLICK on <li>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:button_vs_li": [
+      {
+        "website": "seatgeek",
+        "task": "Search for comedy shows taking place in Chicago, IL and expand the results once.",
+        "step": 6,
+        "action_repr": "[span]  View more -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <li>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "ebay",
+        "task": "Find the cheapest used and working  Nintendo Switch for under $400 that can be b",
+        "step": 4,
+        "action_repr": "[button]  Submit price range -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <li>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "ebay",
+        "task": "Find the cheapest used and working  Nintendo Switch for under $400 that can be b",
+        "step": 7,
+        "action_repr": "[button]  Sort selector. Best Match selected. -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <li>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "parse_failure": [
+      {
+        "website": "aa",
+        "task": "View travel credits for the passenger Leon Sin with the record locator jcqnhd an",
+        "step": 1,
+        "action_repr": "[searchbox]  Search AA.com\u00ae -> TYPE: travel credit",
+        "gt": "TYPE on <input>",
+        "pred": "TYPE on <>",
+        "gt_value": "travel credit",
+        "pred_value": "Leon Sin"
+      },
+      {
+        "website": "sixflags",
+        "task": "Show me all the events at any six flags park in Texas",
+        "step": 3,
+        "action_repr": "[button]  Go! -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "ryanair",
+        "task": "Find a flight From Dublin To Athens Greece for 1 Adult that leaves on April 1 an",
+        "step": 11,
+        "action_repr": "[button]  Select -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:input_vs_button": [
+      {
+        "website": "aa",
+        "task": "View travel credits for the passenger Leon Sin with the record locator jcqnhd an",
+        "step": 2,
+        "action_repr": "[searchbox]  Search AA.com\u00ae -> ENTER",
+        "gt": "CLICK on <input>",
+        "pred": "CLICK on <button>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "yelp",
+        "task": "Search for Mexican restaurants in Concord, CA and start an order at La Pinata Me",
+        "step": 4,
+        "action_repr": "[textbox]  Find -> CLICK",
+        "gt": "CLICK on <input>",
+        "pred": "CLICK on <button>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "kayak",
+        "task": "check cheap flights from NYC to London on 23rd of April for students over 18 yea",
+        "step": 8,
+        "action_repr": "[textbox]  Flight origin input -> TYPE: new york",
+        "gt": "TYPE on <input>",
+        "pred": "CLICK on <button>",
+        "gt_value": "new york",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:input_vs_adc-text-input": [
+      {
+        "website": "aa",
+        "task": "View travel credits for the passenger Leon Sin with the record locator jcqnhd an",
+        "step": 4,
+        "action_repr": "[textbox]  Last name -> TYPE: sin",
+        "gt": "TYPE on <input>",
+        "pred": "TYPE on <adc-text-input>",
+        "gt_value": "sin",
+        "pred_value": "Leon Sin"
+      }
+    ],
+    "wrong_element:adc-button_vs_li": [
+      {
+        "website": "aa",
+        "task": "View travel credits for the passenger Leon Sin with the record locator jcqnhd an",
+        "step": 6,
+        "action_repr": "[adc-button]  Find travel credit -> CLICK",
+        "gt": "CLICK on <adc-button>",
+        "pred": "CLICK on <li>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:a_vs_section": [
+      {
+        "website": "budget",
+        "task": "View the Emergency Sickness Plan policy certificates for Connecticut.",
+        "step": 1,
+        "action_repr": "[button]  Cars & Services -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <section>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "ign",
+        "task": "Show computer game reviews sorted by score.",
+        "step": 2,
+        "action_repr": "[link]  Game Reviews -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <section>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:same_tag_li": [
+      {
+        "website": "qatarairways",
+        "task": "Find a hotel in Las Vegas that will cost two people the least for a week startin",
+        "step": 4,
+        "action_repr": "[option]  Las Vegas Nevada,\u00a0United States -> CLICK",
+        "gt": "CLICK on <li>",
+        "pred": "CLICK on <li>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:span_vs_div": [
+      {
+        "website": "qatarairways",
+        "task": "Find a hotel in Las Vegas that will cost two people the least for a week startin",
+        "step": 5,
+        "action_repr": "[checkbox]  10 April 2023 -> CLICK",
+        "gt": "CLICK on <span>",
+        "pred": "TYPE on <div>",
+        "gt_value": "",
+        "pred_value": "10, April"
+      },
+      {
+        "website": "amazon",
+        "task": "See today's deals on video games and find the best deal on the lowest-priced mou",
+        "step": 8,
+        "action_repr": "[span]  Featured -> CLICK",
+        "gt": "CLICK on <span>",
+        "pred": "SELECT on <div>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "imdb",
+        "task": "Find superhero sci-fi movies based on comic books rated 7 to 9, and add the thre",
+        "step": 11,
+        "action_repr": "[generic]  Compact view -> CLICK",
+        "gt": "CLICK on <span>",
+        "pred": "CLICK on <div>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:button_vs_select": [
+      {
+        "website": "qatarairways",
+        "task": "Find a hotel in Las Vegas that will cost two people the least for a week startin",
+        "step": 7,
+        "action_repr": "[button]  Search -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "SELECT on <select>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "thetrainline",
+        "task": "Find tickets from Edinburgh Waverly to Glagsgow Central on May 18, leaving neare",
+        "step": 14,
+        "action_repr": "[button]  Done -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "SELECT on <select>",
+        "gt_value": "",
+        "pred_value": "1"
+      }
+    ],
+    "wrong_element:button_vs_tr": [
+      {
+        "website": "ticketcenter",
+        "task": "Find the list of off-Broadway theatre shows on April 19",
+        "step": 3,
+        "action_repr": "[button]  All dates -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <tr>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:input_vs_tr": [
+      {
+        "website": "ticketcenter",
+        "task": "Find the list of off-Broadway theatre shows on April 19",
+        "step": 4,
+        "action_repr": "[textbox]  Select Date Range -> CLICK",
+        "gt": "CLICK on <input>",
+        "pred": "SELECT on <tr>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:same_tag_td": [
+      {
+        "website": "ticketcenter",
+        "task": "Find the list of off-Broadway theatre shows on April 19",
+        "step": 5,
+        "action_repr": "[gridcell]  19 -> CLICK",
+        "gt": "CLICK on <td>",
+        "pred": "CLICK on <td>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:input_vs_table": [
+      {
+        "website": "ticketcenter",
+        "task": "Find the list of off-Broadway theatre shows on April 19",
+        "step": 6,
+        "action_repr": "[input]   -> CLICK",
+        "gt": "CLICK on <input>",
+        "pred": "SELECT on <table>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:td_vs_li": [
+      {
+        "website": "ticketcenter",
+        "task": "Find the list of off-Broadway theatre shows on April 19",
+        "step": 7,
+        "action_repr": "[gridcell]  19 -> CLICK",
+        "gt": "CLICK on <td>",
+        "pred": "CLICK on <li>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:a_vs_img": [
+      {
+        "website": "store.steampowered",
+        "task": "Add the ghost frame to your avatar using steam points.",
+        "step": 1,
+        "action_repr": "[link]  STORE -> HOVER",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <img>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "kohls",
+        "task": "Get the lowest priced plus size one piece active swimsuit in color black.",
+        "step": 4,
+        "action_repr": "[link]  Women's Plus -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <img>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "gamestop",
+        "task": "Search for the latest deluxe digital copy of the Xbox Series X Resident Evil gam",
+        "step": 5,
+        "action_repr": "[generic]  Refine by Category: Xbox Series X|S -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <img>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:same_tag_div": [
+      {
+        "website": "store.steampowered",
+        "task": "Add the ghost frame to your avatar using steam points.",
+        "step": 5,
+        "action_repr": "[div]  Ghost -> CLICK",
+        "gt": "CLICK on <div>",
+        "pred": "CLICK on <div>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "kayak",
+        "task": "Search for the cheapest two rooms near Kashi Vishwanath Temple in India for thre",
+        "step": 5,
+        "action_repr": "[div]  6 -> CLICK",
+        "gt": "CLICK on <div>",
+        "pred": "CLICK on <div>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "kayak",
+        "task": "Search for the cheapest two rooms near Kashi Vishwanath Temple in India for thre",
+        "step": 6,
+        "action_repr": "[div]  10 -> CLICK",
+        "gt": "CLICK on <div>",
+        "pred": "CLICK on <div>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "op_confusion:typed_instead_of_clicked": [
+      {
+        "website": "thetrainline",
+        "task": "Find tickets from Edinburgh Waverly to Glagsgow Central on May 18, leaving neare",
+        "step": 1,
+        "action_repr": "[combobox]  Departure station, none selected. Select a station... -> CLICK",
+        "gt": "CLICK on <input>",
+        "pred": "TYPE on <input>",
+        "gt_value": "",
+        "pred_value": "Edinburgh Waverly"
+      },
+      {
+        "website": "yelp",
+        "task": "Search for Mexican restaurants in Concord, CA and start an order at La Pinata Me",
+        "step": 1,
+        "action_repr": "[textbox]  Near -> CLICK",
+        "gt": "CLICK on <input>",
+        "pred": "TYPE on <input>",
+        "gt_value": "",
+        "pred_value": "Concord, CA"
+      },
+      {
+        "website": "kayak",
+        "task": "check cheap flights from NYC to London on 23rd of April for students over 18 yea",
+        "step": 7,
+        "action_repr": "[textbox]  Flight destination input -> CLICK",
+        "gt": "CLICK on <input>",
+        "pred": "TYPE on <input>",
+        "gt_value": "",
+        "pred_value": "NYC"
+      }
+    ],
+    "wrong_element:input_vs_select": [
+      {
+        "website": "thetrainline",
+        "task": "Find tickets from Edinburgh Waverly to Glagsgow Central on May 18, leaving neare",
+        "step": 4,
+        "action_repr": "[combobox]  Arrival station, none selected. Select a station. -> CLICK",
+        "gt": "CLICK on <input>",
+        "pred": "SELECT on <select>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "thetrainline",
+        "task": "Find tickets from Edinburgh Waverly to Glagsgow Central on May 18, leaving neare",
+        "step": 7,
+        "action_repr": "[textbox]  Date use format: 17-Mar-23 -> CLICK",
+        "gt": "CLICK on <input>",
+        "pred": "SELECT on <select>",
+        "gt_value": "",
+        "pred_value": "15"
+      }
+    ],
+    "wrong_element:input_vs_ul": [
+      {
+        "website": "thetrainline",
+        "task": "Find tickets from Edinburgh Waverly to Glagsgow Central on May 18, leaving neare",
+        "step": 5,
+        "action_repr": "[combobox]  Arrival station, none selected. Select a station. -> TYPE: Glasgow",
+        "gt": "TYPE on <input>",
+        "pred": "CLICK on <ul>",
+        "gt_value": "Glasgow",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:li_vs_button": [
+      {
+        "website": "thetrainline",
+        "task": "Find tickets from Edinburgh Waverly to Glagsgow Central on May 18, leaving neare",
+        "step": 6,
+        "action_repr": "[span]  Glasgow Central -> CLICK",
+        "gt": "CLICK on <li>",
+        "pred": "CLICK on <button>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:select_vs_button": [
+      {
+        "website": "thetrainline",
+        "task": "Find tickets from Edinburgh Waverly to Glagsgow Central on May 18, leaving neare",
+        "step": 10,
+        "action_repr": "[listbox]  hour -> SELECT: 15",
+        "gt": "SELECT on <select>",
+        "pred": "CLICK on <button>",
+        "gt_value": "15",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:same_tag_select": [
+      {
+        "website": "thetrainline",
+        "task": "Find tickets from Edinburgh Waverly to Glagsgow Central on May 18, leaving neare",
+        "step": 13,
+        "action_repr": "[listbox]  Select railcard 01 -> SELECT: Veterans Railcard",
+        "gt": "SELECT on <select>",
+        "pred": "SELECT on <select>",
+        "gt_value": "Veterans Railcard",
+        "pred_value": "30"
+      },
+      {
+        "website": "ign",
+        "task": "Show computer game reviews sorted by score.",
+        "step": 3,
+        "action_repr": "[combobox]  Platform -> SELECT: PC",
+        "gt": "SELECT on <select>",
+        "pred": "SELECT on <select>",
+        "gt_value": "PC",
+        "pred_value": "score"
+      }
+    ],
+    "wrong_element:button_vs_input": [
+      {
+        "website": "thetrainline",
+        "task": "Find tickets from Edinburgh Waverly to Glagsgow Central on May 18, leaving neare",
+        "step": 15,
+        "action_repr": "[button]  Get cheapest tickets -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <input>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "kayak",
+        "task": "check cheap flights from NYC to London on 23rd of April for students over 18 yea",
+        "step": 5,
+        "action_repr": "[button]  Increment -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "TYPE on <input>",
+        "gt_value": "",
+        "pred_value": "London"
+      },
+      {
+        "website": "spothero",
+        "task": "Find monthly daytime only parking nearest to Madison Square Garden starting from",
+        "step": 1,
+        "action_repr": "[tab]  Monthly -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "TYPE on <input>",
+        "gt_value": "",
+        "pred_value": "Madison Square Garden"
+      }
+    ],
+    "wrong_element:label_vs_a": [
+      {
+        "website": "imdb",
+        "task": "Find the movie which won the jury prize in Cannes 2022, add the director of the ",
+        "step": 1,
+        "action_repr": "[button]  Open Navigation Drawer -> CLICK",
+        "gt": "CLICK on <label>",
+        "pred": "CLICK on <a>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "booking",
+        "task": "Find an entire home with a rating above 5 for two in Manila, Philippines from Ju",
+        "step": 12,
+        "action_repr": "[span]   -> CLICK",
+        "gt": "CLICK on <label>",
+        "pred": "CLICK on <a>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "aa",
+        "task": "Book a first class vacation travel for 2 adults from San Francisco to New york l",
+        "step": 12,
+        "action_repr": "[combobox]  Fare preference -> SELECT: First",
+        "gt": "SELECT on <label>",
+        "pred": "CLICK on <a>",
+        "gt_value": "First",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:svg_vs_a": [
+      {
+        "website": "imdb",
+        "task": "Find the movie which won the jury prize in Cannes 2022, add the director of the ",
+        "step": 6,
+        "action_repr": "[button]  Add to list -> CLICK",
+        "gt": "CLICK on <svg>",
+        "pred": "CLICK on <a>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "kayak",
+        "task": "Search for the cheapest two rooms near Kashi Vishwanath Temple in India for thre",
+        "step": 12,
+        "action_repr": "[path]   -> CLICK",
+        "gt": "CLICK on <svg>",
+        "pred": "CLICK on <a>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:textarea_vs_a": [
+      {
+        "website": "imdb",
+        "task": "Find the movie which won the jury prize in Cannes 2022, add the director of the ",
+        "step": 8,
+        "action_repr": "[textarea]   -> TYPE: Directors",
+        "gt": "TYPE on <textarea>",
+        "pred": "TYPE on <a>",
+        "gt_value": "Directors",
+        "pred_value": "jury prize"
+      }
+    ],
+    "wrong_element:select_vs_div": [
+      {
+        "website": "imdb",
+        "task": "Find the movie which won the jury prize in Cannes 2022, add the director of the ",
+        "step": 10,
+        "action_repr": "[combobox]  Type of List * -> SELECT: People",
+        "gt": "SELECT on <select>",
+        "pred": "CLICK on <div>",
+        "gt_value": "People",
+        "pred_value": ""
+      },
+      {
+        "website": "cargurus",
+        "task": "Check the lowest price for a white 2017 certified pre owned Lexus Rx350 near 900",
+        "step": 3,
+        "action_repr": "[combobox]  Select Model -> SELECT: RX",
+        "gt": "SELECT on <select>",
+        "pred": "CLICK on <div>",
+        "gt_value": "RX",
+        "pred_value": ""
+      },
+      {
+        "website": "cargurus",
+        "task": "Check the lowest price for a white 2017 certified pre owned Lexus Rx350 near 900",
+        "step": 7,
+        "action_repr": "[combobox]  Select Maximum Year -> SELECT: 2017",
+        "gt": "SELECT on <select>",
+        "pred": "CLICK on <div>",
+        "gt_value": "2017",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:input_vs_td": [
+      {
+        "website": "ticketcenter",
+        "task": "Buy two tickets for the Boston Red Sox vs. New York Yankees game on August 18th,",
+        "step": 1,
+        "action_repr": "[textbox]  Search for artists, teams or venues... -> TYPE: red sox vs yankees",
+        "gt": "TYPE on <input>",
+        "pred": "CLICK on <td>",
+        "gt_value": "red sox vs yankees",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:label_vs_button": [
+      {
+        "website": "ticketcenter",
+        "task": "Buy two tickets for the Boston Red Sox vs. New York Yankees game on August 18th,",
+        "step": 5,
+        "action_repr": "[label]  2 -> CLICK",
+        "gt": "CLICK on <label>",
+        "pred": "CLICK on <button>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "ticketcenter",
+        "task": "Buy two tickets for the Boston Red Sox vs. New York Yankees game on August 18th,",
+        "step": 8,
+        "action_repr": "[span]  Prices with Fees -> CLICK",
+        "gt": "CLICK on <label>",
+        "pred": "CLICK on <button>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:li_vs_a": [
+      {
+        "website": "kohls",
+        "task": "Add a pair of diamond stud earrings to the cart.",
+        "step": 2,
+        "action_repr": "[span]  diamond stud earrings -> CLICK",
+        "gt": "CLICK on <li>",
+        "pred": "CLICK on <a>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "kayak",
+        "task": "check cheap flights from NYC to London on 23rd of April for students over 18 yea",
+        "step": 12,
+        "action_repr": "[span]  All airports -> CLICK",
+        "gt": "CLICK on <li>",
+        "pred": "CLICK on <a>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:label_vs_div": [
+      {
+        "website": "cargurus",
+        "task": "Check the lowest price for a white 2017 certified pre owned Lexus Rx350 near 900",
+        "step": 1,
+        "action_repr": "[LabelText]  Certified Pre-Owned -> CLICK",
+        "gt": "CLICK on <label>",
+        "pred": "SELECT on <div>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "booking",
+        "task": "Find an entire home with a rating above 5 for two in Manila, Philippines from Ju",
+        "step": 8,
+        "action_repr": "[span]   -> CLICK",
+        "gt": "CLICK on <label>",
+        "pred": "CLICK on <div>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "booking",
+        "task": "Find an entire home with a rating above 5 for two in Manila, Philippines from Ju",
+        "step": 10,
+        "action_repr": "[span]   -> CLICK",
+        "gt": "CLICK on <label>",
+        "pred": "CLICK on <div>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:select_vs_input": [
+      {
+        "website": "cargurus",
+        "task": "Check the lowest price for a white 2017 certified pre owned Lexus Rx350 near 900",
+        "step": 6,
+        "action_repr": "[combobox]  Select Minimum Year -> SELECT: 2017",
+        "gt": "SELECT on <select>",
+        "pred": "SELECT on <input>",
+        "gt_value": "2017",
+        "pred_value": "350L Luxury AWD"
+      }
+    ],
+    "wrong_element:label_vs_li": [
+      {
+        "website": "cargurus",
+        "task": "Check the lowest price for a white 2017 certified pre owned Lexus Rx350 near 900",
+        "step": 8,
+        "action_repr": "[div]  White -> CLICK",
+        "gt": "CLICK on <label>",
+        "pred": "CLICK on <li>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "newegg",
+        "task": "Find the cheapest power supply unit with at least 600W power output.",
+        "step": 4,
+        "action_repr": "[combobox]  Featured Items \uf0d7 -> SELECT: Lowest Price",
+        "gt": "SELECT on <label>",
+        "pred": "CLICK on <li>",
+        "gt_value": "Lowest Price",
+        "pred_value": ""
+      }
+    ],
+    "op_confusion:selected_instead_of_clicked": [
+      {
+        "website": "kayak",
+        "task": "Search for the cheapest two rooms near Kashi Vishwanath Temple in India for thre",
+        "step": 3,
+        "action_repr": "[span]  Kashi Vishwanath Temple, Varanasi, Uttar Pradesh, ... -> CLICK",
+        "gt": "CLICK on <li>",
+        "pred": "SELECT on <li>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "kayak",
+        "task": "Search for the cheapest two rooms near Kashi Vishwanath Temple in India for thre",
+        "step": 15,
+        "action_repr": "[checkbox]  Free internet -> CLICK",
+        "gt": "CLICK on <input>",
+        "pred": "SELECT on <input>",
+        "gt_value": "",
+        "pred_value": "freeinternet"
+      },
+      {
+        "website": "newegg",
+        "task": "Build a PC with Intel i9 Raptor Lake 24 cores, Asus ROG strix Z790 motherboard, ",
+        "step": 16,
+        "action_repr": "[button]  \uf067 SELECT -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "SELECT on <button>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:div_vs_input": [
+      {
+        "website": "kayak",
+        "task": "Search for the cheapest two rooms near Kashi Vishwanath Temple in India for thre",
+        "step": 14,
+        "action_repr": "[div]  3 -> CLICK",
+        "gt": "CLICK on <div>",
+        "pred": "TYPE on <input>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "value_wrong": [
+      {
+        "website": "booking",
+        "task": "Find the lowest-priced round trip flight with hotel on May 2 from Kathmandu, Nep",
+        "step": 2,
+        "action_repr": "[textbox]  Where from? -> TYPE: KATHMANDU",
+        "gt": "TYPE on <input>",
+        "pred": "TYPE on <input>",
+        "gt_value": "KATHMANDU",
+        "pred_value": "KTM"
+      },
+      {
+        "website": "aa",
+        "task": "Book a first class vacation travel for 2 adults from San Francisco to New york l",
+        "step": 2,
+        "action_repr": "[textbox]  From -> TYPE: san francisco",
+        "gt": "TYPE on <input>",
+        "pred": "TYPE on <input>",
+        "gt_value": "san francisco",
+        "pred_value": "SFO"
+      }
+    ],
+    "wrong_element:span_vs_td": [
+      {
+        "website": "booking",
+        "task": "Find the lowest-priced round trip flight with hotel on May 2 from Kathmandu, Nep",
+        "step": 7,
+        "action_repr": "[checkbox]  2 May 2023 -> CLICK",
+        "gt": "CLICK on <span>",
+        "pred": "CLICK on <td>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "booking",
+        "task": "Find the lowest-priced round trip flight with hotel on May 2 from Kathmandu, Nep",
+        "step": 8,
+        "action_repr": "[checkbox]  5 May 2023 -> CLICK",
+        "gt": "CLICK on <span>",
+        "pred": "CLICK on <td>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:div_vs_a": [
+      {
+        "website": "kayak",
+        "task": "check cheap flights from NYC to London on 23rd of April for students over 18 yea",
+        "step": 4,
+        "action_repr": "[button]  1 adult -> CLICK",
+        "gt": "CLICK on <div>",
+        "pred": "CLICK on <a>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "kayak",
+        "task": "check cheap flights from NYC to London on 23rd of April for students over 18 yea",
+        "step": 14,
+        "action_repr": "[div]  23 -> CLICK",
+        "gt": "CLICK on <div>",
+        "pred": "CLICK on <a>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:svg_vs_li": [
+      {
+        "website": "kayak",
+        "task": "check cheap flights from NYC to London on 23rd of April for students over 18 yea",
+        "step": 9,
+        "action_repr": "[button]  Remove -> CLICK",
+        "gt": "CLICK on <svg>",
+        "pred": "CLICK on <li>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "kayak",
+        "task": "check cheap flights from NYC to London on 23rd of April for students over 18 yea",
+        "step": 15,
+        "action_repr": "[path]   -> CLICK",
+        "gt": "CLICK on <svg>",
+        "pred": "CLICK on <li>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:div_vs_label": [
+      {
+        "website": "kayak",
+        "task": "check cheap flights from NYC to London on 23rd of April for students over 18 yea",
+        "step": 16,
+        "action_repr": "[span]  Cheapest -> CLICK",
+        "gt": "CLICK on <div>",
+        "pred": "CLICK on <label>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:input_vs_svg": [
+      {
+        "website": "imdb",
+        "task": "Play Trailer of \"The Flash\" 2023.",
+        "step": 1,
+        "action_repr": "[textbox]  Search IMDb -> CLICK",
+        "gt": "CLICK on <input>",
+        "pred": "CLICK on <svg>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:label_vs_span": [
+      {
+        "website": "menards",
+        "task": "Find Maytag electric dryers that are at least 7.3 cubic foot costing less than $",
+        "step": 11,
+        "action_repr": "[checkbox]  7.4 cubic foot (6) -> CLICK",
+        "gt": "CLICK on <label>",
+        "pred": "TYPE on <span>",
+        "gt_value": "",
+        "pred_value": "less_than_1000"
+      }
+    ],
+    "wrong_element:a_vs_p": [
+      {
+        "website": "kohls",
+        "task": "Get the lowest priced plus size one piece active swimsuit in color black.",
+        "step": 1,
+        "action_repr": "[link]  Shop by Category -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "SELECT on <p>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:div_vs_img": [
+      {
+        "website": "kohls",
+        "task": "Get the lowest priced plus size one piece active swimsuit in color black.",
+        "step": 5,
+        "action_repr": "[div]  Color -> CLICK",
+        "gt": "CLICK on <div>",
+        "pred": "CLICK on <img>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "kohls",
+        "task": "Get the lowest priced plus size one piece active swimsuit in color black.",
+        "step": 9,
+        "action_repr": "[div]  Occasion -> CLICK",
+        "gt": "CLICK on <div>",
+        "pred": "CLICK on <img>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:button_vs_section": [
+      {
+        "website": "eventbrite",
+        "task": "Contact Yeah You Right Events who are the organisers of the Food Fight 2023 even",
+        "step": 6,
+        "action_repr": "[button]  Contact the organizer -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <section>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:a_vs_td": [
+      {
+        "website": "ticketcenter",
+        "task": "Find the most expensive ticket for New York Knicks game on April 9",
+        "step": 3,
+        "action_repr": "[option]  New York Knicks -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <td>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:a_vs_tr": [
+      {
+        "website": "ticketcenter",
+        "task": "Find the most expensive ticket for New York Knicks game on April 9",
+        "step": 4,
+        "action_repr": "[link]  TICKETS -> CLICK",
+        "gt": "CLICK on <a>",
+        "pred": "CLICK on <tr>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:input_vs_span": [
+      {
+        "website": "imdb",
+        "task": "Find superhero sci-fi movies based on comic books rated 7 to 9, and add the thre",
+        "step": 5,
+        "action_repr": "[checkbox]  Based On Comic Book (226) -> CLICK",
+        "gt": "CLICK on <input>",
+        "pred": "SELECT on <span>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:li_vs_span": [
+      {
+        "website": "imdb",
+        "task": "Find superhero sci-fi movies based on comic books rated 7 to 9, and add the thre",
+        "step": 6,
+        "action_repr": "[strong]  IMDb Rating -> CLICK",
+        "gt": "CLICK on <li>",
+        "pred": "SELECT on <span>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:strong_vs_div": [
+      {
+        "website": "imdb",
+        "task": "Find superhero sci-fi movies based on comic books rated 7 to 9, and add the thre",
+        "step": 9,
+        "action_repr": "[strong]  Refine -> CLICK",
+        "gt": "CLICK on <strong>",
+        "pred": "CLICK on <div>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:same_tag_span": [
+      {
+        "website": "kohls",
+        "task": "Find a cheapest washable blue rug under 2'x3' size.",
+        "step": 7,
+        "action_repr": "[span]  Size -> CLICK",
+        "gt": "CLICK on <span>",
+        "pred": "SELECT on <span>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "spothero",
+        "task": "Find monthly daytime only parking nearest to Madison Square Garden starting from",
+        "step": 6,
+        "action_repr": "[gridcell]  Sat Apr 22 2023 -> CLICK",
+        "gt": "CLICK on <span>",
+        "pred": "CLICK on <span>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:svg_vs_section": [
+      {
+        "website": "ign",
+        "task": "Show computer game reviews sorted by score.",
+        "step": 1,
+        "action_repr": "[button]  Reviews -> CLICK",
+        "gt": "CLICK on <svg>",
+        "pred": "SELECT on <section>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:input_vs_fsw-flight-search-widget": [
+      {
+        "website": "ryanair",
+        "task": "Find a flight From Dublin To Athens Greece for 1 Adult that leaves on April 1 an",
+        "step": 1,
+        "action_repr": "[textbox]  To -> CLICK",
+        "gt": "CLICK on <input>",
+        "pred": "CLICK on <fsw-flight-search-widget>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:fsw-airport-item_vs_div": [
+      {
+        "website": "ryanair",
+        "task": "Find a flight From Dublin To Athens Greece for 1 Adult that leaves on April 1 an",
+        "step": 3,
+        "action_repr": "[button]  Athens -> CLICK",
+        "gt": "CLICK on <fsw-airport-item>",
+        "pred": "CLICK on <div>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:fsw-input-button_vs_input": [
+      {
+        "website": "ryanair",
+        "task": "Find a flight From Dublin To Athens Greece for 1 Adult that leaves on April 1 an",
+        "step": 8,
+        "action_repr": "[div]  Choose date -> CLICK",
+        "gt": "CLICK on <fsw-input-button>",
+        "pred": "TYPE on <input>",
+        "gt_value": "",
+        "pred_value": "Dublin"
+      }
+    ],
+    "wrong_element:div_vs_fsw-input-button": [
+      {
+        "website": "ryanair",
+        "task": "Find a flight From Dublin To Athens Greece for 1 Adult that leaves on April 1 an",
+        "step": 9,
+        "action_repr": "[generic]  5 -> CLICK",
+        "gt": "CLICK on <div>",
+        "pred": "CLICK on <fsw-input-button>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:button_vs_fsw-flight-search-widget-controls": [
+      {
+        "website": "ryanair",
+        "task": "Find a flight From Dublin To Athens Greece for 1 Adult that leaves on April 1 an",
+        "step": 10,
+        "action_repr": "[button]  Search -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <fsw-flight-search-widget-controls>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:button_vs_flight-price": [
+      {
+        "website": "ryanair",
+        "task": "Find a flight From Dublin To Athens Greece for 1 Adult that leaves on April 1 an",
+        "step": 12,
+        "action_repr": "[button]  Select -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <flight-price>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:div_vs_li": [
+      {
+        "website": "gamestop",
+        "task": "Search for the latest deluxe digital copy of the Xbox Series X Resident Evil gam",
+        "step": 11,
+        "action_repr": "[span]  Digital -> CLICK",
+        "gt": "CLICK on <div>",
+        "pred": "CLICK on <li>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:select_vs_td": [
+      {
+        "website": "espn",
+        "task": "check the 2022 highest goal scorer in the MLS league",
+        "step": 4,
+        "action_repr": "[select]  2023 -> SELECT: 2022",
+        "gt": "SELECT on <select>",
+        "pred": "CLICK on <td>",
+        "gt_value": "2022",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:input_vs_img": [
+      {
+        "website": "rei",
+        "task": "Trade in a Nemo Front Porch 2P Tent via mail with my membership info Joe Bloggs,",
+        "step": 3,
+        "action_repr": "[combobox]  search input -> TYPE: Nemo Front Porch 2P Tent",
+        "gt": "TYPE on <input>",
+        "pred": "CLICK on <img>",
+        "gt_value": "Nemo Front Porch 2P Tent",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:img_vs_button": [
+      {
+        "website": "rei",
+        "task": "Trade in a Nemo Front Porch 2P Tent via mail with my membership info Joe Bloggs,",
+        "step": 4,
+        "action_repr": "[img]  search icon -> CLICK",
+        "gt": "CLICK on <img>",
+        "pred": "CLICK on <button>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:button_vs_label": [
+      {
+        "website": "rei",
+        "task": "Trade in a Nemo Front Porch 2P Tent via mail with my membership info Joe Bloggs,",
+        "step": 5,
+        "action_repr": "[button]  Trade in -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <label>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "newegg",
+        "task": "Build a PC with Intel i9 Raptor Lake 24 cores, Asus ROG strix Z790 motherboard, ",
+        "step": 6,
+        "action_repr": "[button]  \uf067 SELECT -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "CLICK on <label>",
+        "gt_value": "",
+        "pred_value": ""
+      },
+      {
+        "website": "newegg",
+        "task": "Build a PC with Intel i9 Raptor Lake 24 cores, Asus ROG strix Z790 motherboard, ",
+        "step": 8,
+        "action_repr": "[button]  \uf067 SELECT -> CLICK",
+        "gt": "CLICK on <button>",
+        "pred": "SELECT on <label>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ],
+    "wrong_element:i_vs_a": [
+      {
+        "website": "newegg",
+        "task": "Build a PC with Intel i9 Raptor Lake 24 cores, Asus ROG strix Z790 motherboard, ",
+        "step": 1,
+        "action_repr": "[generic]  Site Menu -> CLICK",
+        "gt": "CLICK on <i>",
+        "pred": "CLICK on <a>",
+        "gt_value": "",
+        "pred_value": ""
+      }
+    ]
+  },
+  "by_operation": {
+    "CLICK": {
+      "total": 334,
+      "correct": 32,
+      "elem_correct": 40,
+      "op_correct": 262
+    },
+    "SELECT": {
+      "total": 21,
+      "correct": 1,
+      "elem_correct": 5,
+      "op_correct": 9
+    },
+    "TYPE": {
+      "total": 52,
+      "correct": 14,
+      "elem_correct": 20,
+      "op_correct": 28
+    }
+  },
+  "by_domain": {
+    "Travel": {
+      "accuracy": 0.12994350282485875
+    },
+    "Entertainment": {
+      "accuracy": 0.09195402298850575
+    },
+    "Shopping": {
+      "accuracy": 0.11188811188811189
+    }
+  }
+}

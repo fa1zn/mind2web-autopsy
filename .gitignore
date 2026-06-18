@@ -1,0 +1,8 @@
+data/
+venv/
+__pycache__/
+*.pyc
+generate_resume.py
+faizan_syed_resume_updated.pdf
+email_draft.md
+linkedin_post_draft.md
