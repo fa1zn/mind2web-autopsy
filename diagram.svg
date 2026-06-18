@@ -1,0 +1,68 @@
+<svg width="100%" viewBox="0 0 680 596" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Why a shaped reward trains a web agent and a binary one does not</title>
+  <desc>An agent makes several tries at a web step. Under binary scoring, every imperfect try scores zero, so a near-miss and a random click look identical and the model cannot tell them apart. Under shaped scoring, the closer the try the higher the score, so the model can move toward the better attempts. Dead training batches drop from forty percent to two percent.</desc>
+
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="680" height="596" rx="14" fill="#0e0e12"/>
+
+  <text x="340" y="44" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" fill="#ECECEE">A web agent fails a step. How much should it learn?</text>
+  <text x="340" y="68" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" fill="#9A9AA5" font-style="italic">It learns by comparing a batch of tries. Everything rides on how you score them.</text>
+
+  <text x="48" y="118" font-family="Georgia, 'Times New Roman', serif" font-size="15" fill="#FC6255">binary score</text>
+  <text x="48" y="135" font-family="Georgia, 'Times New Roman', serif" font-size="12" fill="#8A8A95" font-style="italic">pass or fail</text>
+
+  <line x1="100" y1="195" x2="600" y2="195" stroke="#45454f" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="110" y1="190" x2="110" y2="200" stroke="#45454f" stroke-width="1.5"/>
+  <line x1="560" y1="190" x2="560" y2="200" stroke="#45454f" stroke-width="1.5"/>
+  <text x="110" y="214" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#6f6f7a">scores 0</text>
+  <text x="560" y="214" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#6f6f7a">perfect</text>
+
+  <circle cx="103" cy="195" r="6" fill="#FC6255"/>
+  <circle cx="118" cy="195" r="6" fill="#FC6255"/>
+  <circle cx="103" cy="181" r="6" fill="#FC6255"/>
+  <circle cx="118" cy="181" r="6" fill="#FC6255"/>
+  <circle cx="103" cy="167" r="6" fill="#FC6255"/>
+  <circle cx="118" cy="167" r="6" fill="#FC6255"/>
+  <circle cx="103" cy="153" r="6" fill="#FC6255"/>
+  <circle cx="118" cy="153" r="6" fill="#FC6255"/>
+
+  <text x="358" y="238" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" fill="#ECECEE">Every imperfect try scores 0.</text>
+  <text x="358" y="259" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#9A9AA5">A near-miss and a random click look identical.</text>
+  <text x="358" y="278" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#5f5f6a" font-style="italic">the scores don't spread, so there's nothing to learn from</text>
+
+  <text x="48" y="322" font-family="Georgia, 'Times New Roman', serif" font-size="15" fill="#83C167">shaped score</text>
+  <text x="48" y="339" font-family="Georgia, 'Times New Roman', serif" font-size="12" fill="#8A8A95" font-style="italic">partial credit</text>
+
+  <line x1="275" y1="358" x2="275" y2="412" stroke="#F2D44A" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="275" y="352" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#F2D44A" font-style="italic">average</text>
+
+  <line x1="100" y1="406" x2="600" y2="406" stroke="#45454f" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="110" y1="401" x2="110" y2="411" stroke="#45454f" stroke-width="1.5"/>
+  <line x1="560" y1="401" x2="560" y2="411" stroke="#45454f" stroke-width="1.5"/>
+
+  <circle cx="110" cy="406" r="7" fill="#FC6255"/>
+  <circle cx="110" cy="390" r="7" fill="#FC6255"/>
+  <circle cx="208" cy="406" r="7" fill="#FC6255"/>
+  <circle cx="257" cy="406" r="7" fill="#FC6255"/>
+  <circle cx="355" cy="406" r="7" fill="#83C167"/>
+  <circle cx="355" cy="390" r="7" fill="#83C167"/>
+  <circle cx="355" cy="374" r="7" fill="#83C167"/>
+  <circle cx="453" cy="406" r="7" fill="#83C167"/>
+
+  <text x="110" y="430" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#8A8A95">random click</text>
+  <text x="355" y="430" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#8A8A95">right link, wrong one</text>
+  <text x="540" y="430" text-anchor="middle" font-family="Georgia, serif" font-size="12" fill="#8A8A95">exactly right</text>
+
+  <text x="340" y="458" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="15" fill="#ECECEE">The closer it gets, the higher it scores.</text>
+  <text x="340" y="479" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" fill="#9A9AA5">Now it can move toward the better tries.</text>
+  <text x="340" y="497" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#5f5f6a" font-style="italic">the spread of scores becomes the training signal</text>
+
+  <line x1="100" y1="520" x2="600" y2="520" stroke="#26262e" stroke-width="1"/>
+  <text x="340" y="546" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="14" fill="#A8A8B2">Measured on a live Qwen3.5-2B GRPO run. Only the reward changed.</text>
+  <text x="340" y="574" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="18" fill="#ECECEE">batches too flat to learn from:  <tspan fill="#FC6255">89%</tspan>  &#8594;  <tspan fill="#83C167">17%</tspan></text>
+</svg>
