@@ -2,7 +2,7 @@
 
 A failure-mode autopsy of web agents on OSU NLP's [Mind2Web](https://osu-nlp-group.github.io/Mind2Web/) dataset, plus a shaped verifiable reward function designed to replace binary scoring for GRPO training.
 
-![Mind2Web Autopsy: Why Web Agents Fail](diagram.svg)
+![How web agents actually fail](diagram.svg)
 
 ## Motivation
 
@@ -29,6 +29,8 @@ This project does two things:
 ### Validation: real GRPO training
 
 The dead-batch number above was simulated from the offline eval data. To check it for real, the same scoring logic is packaged as a verifiers environment and trained with GRPO on Qwen3.5-2B via Prime Intellect hosted training. Two arms, identical except the reward (binary vs shaped), 80 steps each.
+
+![Real GRPO result: shaping cut wasted batches but not accuracy](result.svg)
 
 | Reward | Mean dead-batch rate | Binary accuracy (start to end) |
 |--------|---------------------|--------------------------------|
